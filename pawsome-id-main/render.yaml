@@ -1,0 +1,13 @@
+# Render service manifest for the `server/` subdirectory
+# Replace `repo` with your GitHub repo SSH/HTTPS URL and fill `name`/`branch` as needed.
+services:
+  - type: web
+    name: pawsome-server
+    env: node
+    plan: free
+    repo: "git@github.com:YOURNAME/YOURREPO.git" # or https://github.com/USER/REPO
+    branch: main
+    buildCommand: npm install
+    startCommand: node src/index.js
+    rootDir: server
+    autoDeploy: true
